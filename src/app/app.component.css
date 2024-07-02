@@ -1,0 +1,21 @@
+.navbar {
+    background-color: #000; /* Fondo negro */
+  }
+  
+.nav-link {
+    color: #fff; /* Color de texto blanco */
+    padding: 10px; /* Añadir padding */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+.nav-link.active {
+    background-color: #6f42c1; /* Color morado para el botón activo */
+    color: #fff; /* Color de texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+.nav-link:hover {
+    background-color: #6f42c1; /* Color morado al pasar el mouse por encima */
+    color: #fff; /* Color de texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+  }

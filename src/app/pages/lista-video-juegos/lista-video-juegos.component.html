@@ -1,0 +1,47 @@
+<div class="container">
+    <h2 class="text-center text-purple my-5">Listado de videojuegos</h2>
+
+    <p *ngIf="videojuegos.length <= 0" class="text-center">
+        No hay videojuegos registrados
+    </p>
+
+    <table *ngIf="videojuegos.length > 0" class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th scope="col">ID Videojuego</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Clasificación</th>
+                <th scope="col">Desarrolladora</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let videojuego of videojuegos; let i=index" [class.selected-row]="i === selectedRow">
+                <td>{{videojuego._id}}</td>
+                <td>{{videojuego.titulo}}</td>
+                <td>{{videojuego.clasificacion}}</td>
+                <td>{{videojuego.desarrolladora}}</td>
+                <td>{{videojuego.descripcion}}</td>
+                <td>{{videojuego.precio}}</td>
+
+                <td class="text-center">
+                    <span [routerLink]="['/editar-videoJuego',videojuego._id]">
+                        <button class="btn btn-warning btn-sm" type="button">
+                            <img src="../../../assets/icons/pencil-square.svg" style="filter: invert(100%);">
+                        </button>
+                    </span>
+                </td>
+                <td class="text-center">
+                    <span (click)="eliminarVideojuego(videojuego, i)">
+                        <button type="button" class="btn btn-danger btn-sm">
+                            <img src="../../../assets/icons/trash3.svg" style="filter: invert(100%);">
+                        </button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

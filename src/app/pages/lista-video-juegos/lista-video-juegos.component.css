@@ -1,0 +1,20 @@
+/* Estilos para el título h2 */
+.text-purple {
+    color: purple; /* Color de texto morado */
+}
+
+/* Estilos para el fondo morado claro cuando se selecciona una fila */
+.selected-row {
+    background-color: lavender; /* Fondo morado claro */
+}
+
+/* Estilos para los botones con iconos */
+.btn-editar, .btn-eliminar {
+    border: none; /* Quita el borde */
+    background: none; /* Quita el fondo */
+    cursor: pointer; /* Cambia el cursor a puntero */
+}
+
+.thead-purple {
+    background-color: purple; /* Fondo morado para el thead */
+}

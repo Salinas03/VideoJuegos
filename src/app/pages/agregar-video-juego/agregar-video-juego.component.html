@@ -1,0 +1,51 @@
+<div class="container">
+    <h2 class="text-center text-purple">Agregar videojuego</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card-body">
+
+                <form [formGroup]="videoJuegoForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="titulo">Nombre del videojuego:</label>
+                        <input type="text" class="form-control" formControlName="titulo">
+                        <div style="color: red;" *ngIf="enviado && myForm['titulo'].errors?.['required']">Este campo es obligatorio</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="clasificacion">Clasificación:</label>
+                        <select class="custom-select form-control" (change)="actualizarCategoria($event.target.value)" formControlName="clasificacion">
+                            <option value="">Selecciona la Clasificación...</option>
+                            <option *ngFor="let clasificacion of videojuegoClasificacion" [value]="clasificacion">{{ clasificacion }}</option>
+                        </select>
+                        <div style="color: red;" *ngIf="enviado && myForm['clasificacion'].errors?.['required']">Debes seleccionar una clasificación</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="desarrolladora">Desarrolladora:</label>
+                        <input type="text" class="form-control" formControlName="desarrolladora">
+                        <div style="color: red;" *ngIf="enviado && myForm['desarrolladora'].errors?.['required']">Este campo es obligatorio</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción:</label>
+                        <input type="text" class="form-control" formControlName="descripcion">
+                        <div style="color: red;" *ngIf="enviado && myForm['descripcion'].errors?.['required']">Este campo es obligatorio</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="precio">Precio:</label>
+                        <input type="text" class="form-control" formControlName="precio">
+                        <div style="color: red;" *ngIf="enviado && myForm['precio'].errors?.['required']">Este campo es obligatorio</div>
+                        <div style="color: red;" *ngIf="enviado && myForm['precio'].errors?.['pattern']">El precio no es válido</div>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-block btn-purple" type="submit">Agregar Videojuego</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

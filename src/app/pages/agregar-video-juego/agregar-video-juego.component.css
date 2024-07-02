@@ -1,0 +1,15 @@
+.text-purple {
+    color: purple;
+    margin-bottom: 50px;
+}
+
+.btn-purple {
+    background-color: purple;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #6f42c1; /* Color morado más oscuro al pasar el mouse */
+    color: white;
+    transition: background-color 0.3s ease; /* Animación de transición */
+}
